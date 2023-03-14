@@ -5,7 +5,7 @@
 
 set :env_file, ".env_production"
 
-server ENV['DEPLOY_HOST'], user: ENV['DEPLOY_USERNAME'], roles: %w{app db web}, port: ENV['DEPLOY_PORT']
+server ENV['DEPLOY_HOST'], user: ENV['DEPLOY_USERNAME'], roles: %w{app db web}, port: ENV['DEPLOY_HOST_SSH_PORT']
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
