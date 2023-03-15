@@ -23,6 +23,9 @@ jobs:
       - name: Add known host
         run: |
           ssh-keyscan -p ${{ secrets.DEPLOY_HOST_SSH_PORT }} ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+      - name: Test SSH connection
+        run: |
+          ssh -vvv ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }} -p${{ secrets.DEPLOY_HOST_SSH_PORT }}
       - name: Deploy
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
