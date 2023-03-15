@@ -31,3 +31,7 @@ Check configuration
 Define admin super user
 
     python3 manage.py createsuperuser
+
+## Misc
+
+ruby net-ssh on Windows use Pageant as ssh-agent, it should be installed on the local computer if deployment is started from Windows (git bash for example).
